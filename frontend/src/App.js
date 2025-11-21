@@ -15,7 +15,8 @@ import { motion } from "framer-motion";
 import "./index.css";
 import MapView from "./components/MapView";
 
-const socket = io("http://localhost:5000", {
+// const socket = io("http://localhost:5000", {
+const socket = io("https://ecostep.onrender.com", {
   transports: ["websocket", "polling"],
   reconnection: true,
 });
@@ -64,7 +65,8 @@ function App() {
   // 👉 Fetch city list from backend (for dropdowns / grid)
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/cities")
+      // .get("http://localhost:5000/api/cities")
+      .get("https://ecostep.onrender.com/api/cities")
       .then((res) => setCities(res.data))
       .catch((err) => console.error("Error fetching cities:", err.message));
   }, []);
@@ -72,7 +74,8 @@ function App() {
   // 👉 Fetch initial latest AQI data to prefill cards/history
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/airquality/latest")
+      // .get("http://localhost:5000/api/airquality/latest")
+      .get("https://ecostep.onrender.com/api/airquality/latest")
       .then((res) => {
         // res.data is sorted by timestamp desc (newest first)
         const grouped = {};
