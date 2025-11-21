@@ -176,3 +176,23 @@ code {
     grid-template-columns: 1fr;
   }
 } 
+
+body {
+  margin: 0;
+  background-color: #f0fff4;
+  font-family: "Poppins", sans-serif;
+}
+.btn {
+  background: white;
+  border: 2px solid #16a34a;
+  color: #14532d;
+  border-radius: 20px;
+  padding: 6px 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.btn:hover {
+  background: #16a34a;
+  color: white;
+}
